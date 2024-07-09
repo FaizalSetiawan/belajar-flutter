@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/container_widget.dart'; // Pastikan file ini ada dan dapat diakses
+import 'package:myapp/row_column/column_widget.dart';
+import 'package:myapp/row_column/latihan_rowcolumn.dart';
+import 'package:myapp/row_column/row_widget.dart';
+import 'package:myapp/row_column/latihan_rowcolumn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,18 +14,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Belajar Flutter',
       home: Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromARGB(255, 51, 199, 199),
         appBar: AppBar(
-          title: const Text('Belajar Flutter'),
+          title: const Text('Biodata'),
           centerTitle: true,
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: Color.fromARGB(255, 0, 47, 255),
         ),
-        body: const BelajarContainer(), // Menambahkan const karena widget tidak berubah
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(Icons.add),
+        body: Latihan(),
+      ),
+    );
+  }
+}
+
+class TextWidget extends StatelessWidget {
+  const TextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        'Hello Dunia',
+        style: TextStyle(
+          fontSize: 30,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          backgroundColor: Colors.black26,
         ),
       ),
     );
